@@ -32,7 +32,7 @@ public class UserDao {
         return user;
     }
 
-    //  REGISTER (SAVE USER)
+    //  REGISTER 
     public void saveUser(User user) {
 
         EntityManager em = JPAUtil.getEMF().createEntityManager();
@@ -44,7 +44,7 @@ public class UserDao {
         em.close();
     }
 
-    // 🔹 CHECK USER EXISTS
+    //   CHECK USER EXISTS
     public boolean isUserExists(String username) {
 
         EntityManager em = JPAUtil.getEMF().createEntityManager();

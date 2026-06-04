@@ -21,22 +21,22 @@ public class RegisterServlet extends HttpServlet {
 
         UserDao dao = new UserDao();
 
-        // 🔥 Check if user already exists
+        //  Check if user already exists
         if (dao.isUserExists(username)) {
 
             resp.sendRedirect("error.jsp?msg=User+already+exists");
             return;
         }
 
-        // 🔥 Create user object
+        //  Create user object
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
 
-        // 🔥 Save user
+        //  Save user
         dao.saveUser(user);
 
-        // ✅ Redirect to login
+        //  edirect to login
         resp.sendRedirect("login.jsp?msg=Registered+Successfully");
     }
 }
